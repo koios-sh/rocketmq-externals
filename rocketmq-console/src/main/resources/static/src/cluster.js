@@ -41,6 +41,10 @@ app.controller('clusterController', ['$scope','$location','$http','Notification'
 
     remoteApi.queryClusterList(callback);
 
+    $scope.refresh = function() {
+        remoteApi.queryClusterList(callback);
+    }
+
     $scope.switchCluster = function(){
         $scope.instances = $scope.brokers[$scope.selectedCluster];
     }
